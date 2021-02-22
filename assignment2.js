@@ -35,16 +35,16 @@ function isOddNumber(number){
 	return number % 2;
 }
 
-const cb =(x) =>{
+const cb1 =(x) =>{
 	console.log(isOddNumber(x));
 };
 
-const print = (x) => console.log(x);
+const print1 = (x) => console.log(x);
 
-//this = arr
-arr.myEach(cb);
-print("--");
-arr.myEach(print);
+/*
+arr.myEach(cb1);
+print1("--");
+arr.myEach(print);*/
 
 //======================================================================
 
@@ -77,6 +77,33 @@ parameters:
 
 returns: A new array with each element being the result of the callback function.
 */
+
+Array.prototype.myMap = function(callback) 
+{
+	var answer= [];
+	for (let i =0; i<this.length; i++) 
+	{
+		//if(this[i]===undefined) {continue;}
+		answer.push(callback(this[i]));
+	}
+	return answer; //returns undefined
+};
+
+//Testing
+const arr2 = [1,2,3,4];
+function timesTwo(number){
+	return number * 2;
+}
+const cb2 =(x2) =>{
+	console.log(timesTwo(x2));
+};
+
+const print2 = (x2) => console.log(x2);
+
+var arr3 = [];
+print1(arr2);
+//print2(cb2);
+//arr3.myMap(print2);
 
 //======================================================================
 
