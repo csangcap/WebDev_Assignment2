@@ -30,7 +30,7 @@ Array.prototype.myEach = function(callback) {
 };
 
 //Testing
-const arr = [1,2,3,4];
+const arr1 = [1,2,3,4];
 function isOddNumber(number){
 	return number % 2;
 }
@@ -41,10 +41,10 @@ const cb1 =(x) =>{
 
 const print1 = (x) => console.log(x);
 
-/*
-arr.myEach(cb1);
+print1("myEach() test:")
+arr1.myEach(cb1);
 print1("--");
-arr.myEach(print);*/
+arr1.myEach(print1);
 
 //======================================================================
 
@@ -94,16 +94,16 @@ const arr2 = [1,2,3,4];
 function timesTwo(number){
 	return number * 2;
 }
-const cb2 =(x2) =>{
-	console.log(timesTwo(x2));
+const cb2 =(x) => {
+	console.log(timesTwo(x))
 };
 
-const print2 = (x2) => console.log(x2);
+print1("myMap() test:");
 
-var arr3 = [];
-print1(arr2);
-//print2(cb2);
-//arr3.myMap(print2);
+var arr3=[];
+arr3.myMap(cb2);
+print1(arr3);
+
 
 //======================================================================
 
