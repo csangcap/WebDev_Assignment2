@@ -4,8 +4,6 @@ Assignment 2
 Team members:
   Caitlin-Dawn Sangcap
   Alfonso Gunawan
-  Ifte Ahmed
-  James Yoo
 */
 
 /*
@@ -47,3 +45,35 @@ const print = (x) => console.log(x);
 arr.myEach(cb);
 print("--");
 arr.myEach(print);
+
+//======================================================================
+
+/*
+Without using the native “Array.prototype.map” method of JavaScript, 
+compose a function titled “myMap” that will take in an array of elements
+and execute a callback function on each of those elements.
+
+Description:
+map calls a provided callback function once for each element in an array,
+in order, and constructs a new array from the results. callback is invoked only 
+for indexes of the array which have assigned values (including undefined).
+
+It is not called for missing elements of the array; that is:
+
+indexes that have never been set;
+indexes which have been deleted.
+
+parameters:
+  callbacl: Function tat is called for every element of arr. Each time callback
+    executes, the returned value is added to newArray.
+
+  currentValue: the current element being processed in the array.
+  index(Optional): The index of the current element being processes in the array.
+  array(Optional): The array map was called upon.
+  thisArg(Optional): Value to use this when executing callback.
+
+returns: A new array with each element being the result of the callback function.
+*/
+
+
+
