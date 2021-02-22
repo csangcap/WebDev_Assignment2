@@ -80,13 +80,8 @@ returns: A new array with each element being the result of the callback function
 
 Array.prototype.myMap = function(callback) 
 {
-	var answer= [];
-	for (let i =0; i<this.length; i++) 
-	{
-		//if(this[i]===undefined) {continue;}
-		answer.push(callback(this[i]));
-	}
-	return answer; //returns undefined
+	//no idea what to put. please help
+	//I have no clue what to do here. This makes no sense to me.
 };
 
 //Testing
@@ -100,9 +95,9 @@ const cb2 =(x) => {
 
 print1("myMap() test:");
 
-var arr3=[];
-arr3.myMap(cb2);
-print1(arr3);
+//var arr3=[];
+print1(cb2);
+//print1(arr3);
 
 
 //======================================================================
