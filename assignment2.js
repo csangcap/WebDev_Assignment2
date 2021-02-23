@@ -49,6 +49,7 @@ arr1.myEach(print);
 //======================================================================
 
 /*
+Done by: Caitlin-Dawn Sangcap (02/23/21)
 
 map()
 
@@ -105,6 +106,9 @@ print(arr2);
 //======================================================================
 
 /*
+
+Done by: Caitlin-Dawn Sangcap (02/23/21)
+
 filter()
 
 Without using the native “Array.prototype.filter” method of JavaScript, 
@@ -139,3 +143,19 @@ It accepts three arguments:
 Return value: A new array with the elements that pass the test. 
     If no elements pass the test, an empty array will be returned.
 */
+
+Array.prototype.myFilter = function(callback)
+{
+	var answer=[];
+	for (let i =0; i<this.length; i++) 
+	{
+		
+	}
+	return answer;
+};
+
+//Testing
+//function checks if value is greater than the max
+function greaterThan(value,max){
+	return value > max;
+}
