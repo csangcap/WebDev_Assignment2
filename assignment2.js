@@ -144,18 +144,29 @@ Return value: A new array with the elements that pass the test.
     If no elements pass the test, an empty array will be returned.
 */
 
+//the callback function should be a boolean type function
 Array.prototype.myFilter = function(callback)
 {
 	var answer=[];
 	for (let i =0; i<this.length; i++) 
 	{
-		
+		var check = callback(this[i], i , this);
+		if(check == true) {answer.push(this[i]);}
 	}
 	return answer;
 };
 
 //Testing
 //function checks if value is greater than the max
-function greaterThan(value,max){
-	return value > max;
+function greaterThan10(value){
+	return value > 10;
 }
+
+const arr4 = [9,10,11,12];
+print("myFilter() test:");
+var filter_trial = arr4.myFilter(greaterThan10);
+print(arr4);
+print(filter_trial);
+
+//======================================================================
+
