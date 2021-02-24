@@ -189,7 +189,7 @@ print("------------------------------")
 print("First myLastIndexOf() test:");
 const lookUp=1;
 const arr10=[2,3,1,4];
-var myLastIndexOf_test=arr10.myLastIndexOf(lookUp);
+let myLastIndexOf_test=arr10.myLastIndexOf(lookUp);
 print(`Looking for ${lookUp}`);
 print(`Current array: ${arr10}`);
 print(myLastIndexOf_test);  //expected output is 2
@@ -208,13 +208,36 @@ myLastIndexOf_test=animals.myLastIndexOf(lookUp3);
 print(`Looking for ${lookUp3}`);
 print(`Current array: ${animals}`);
 print(myLastIndexOf_test); //expected output is 1
+
+print ("Fourth myLastIndexOf() test:")
+const lookUp4='Dog';
+myLastIndexOf_test=animals.myLastIndexOf(lookUp4);
+print(`Looking for ${lookUp4}`);
+print(`Current array: ${animals}`);
+print(myLastIndexOf_test); //expected output is -1
 //======================================================================
 
-Object.grabKeys=function()
+Object.grabKeys=function(object1)
 {
-
+	let return_key=[];
+	for (let item in object1)
+	{
+		return_key.push(item);
+	}
+	return return_key;
 }
 
-Object.grabValues=function(){
+//testing Object.grabKeys
+const task= {
+	'morning' : 'eat',
+	'day':'work',
+	'night':'sleep'
+};
 
+print("-------------------------------------------")
+let grabKeys_test=Object.grabKeys(task);
+print(grabKeys_test); //keys should be ['morning', 'day', 'night']
+//======================================================================
+Object.grabValues=function(){
+	
 }
