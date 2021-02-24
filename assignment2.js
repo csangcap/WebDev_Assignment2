@@ -170,26 +170,47 @@ print(arr4);
 print(filter_trial);
 
 //======================================================================
+/*
 
+Done by: James Yoo (02/24/21)
 
-Array.prototype.myLastIndexOf= function(match)
+myLastIndexOf()
+
+Without using the native “Array.prototype.lastIndexOf” method of JavaScript, 
+compose a function titled “myLastIndexOf” that will take in an array of elements 
+and returns the index of the last encounter of a target element (if it is found) or -1 
+if that element does not exist within the input array.
+
+Parameters:
+	searchElement: The element to locate in the array
+	fromIndex(Optional): An index on where to start the search from
+
+Return value: The last index of the element in the array, -1 if not found.
+*/
+
+Array.prototype.myLastIndexOf= function(match, from)
 {
-	let target=-1;
-	for (let i=0; i<this.length; i++)
+	let fromIndexs=this.length-1;	//Index to start searching from the back
+	if (from>-1 && from<this.length)	//An optional feature fromIndex(second parameter)
 	{
-		if (match===this[i])
+		fromIndexs=from;
+	} 
+	let target=-1;						//This is our return variable
+	for (fromIndexs; fromIndexs>0; fromIndexs--)	//Loop through the array to find the match
+	{
+		if (match===this[fromIndexs])		//Use strictly equal to compare the values in the array
 		{
-			target=i; 
+			target=fromIndexs; 
 		}
 	}
-	return target;
+	return target;							
 }
 //Testing myLastIndexOf()
 print("------------------------------")
 print("First myLastIndexOf() test:");
 const lookUp=1;
 const arr10=[2,3,1,4];
-let myLastIndexOf_test=arr10.myLastIndexOf(lookUp);
+let myLastIndexOf_test=arr10.myLastIndexOf(lookUp, 3);
 print(`Looking for ${lookUp}`);
 print(`Current array: ${arr10}`);
 print(myLastIndexOf_test);  //expected output is 2
@@ -216,15 +237,31 @@ print(`Looking for ${lookUp4}`);
 print(`Current array: ${animals}`);
 print(myLastIndexOf_test); //expected output is -1
 //======================================================================
+/*
 
+Done by: James Yoo (02/24/21)
+
+grabKeys()
+
+Without using the native “Object.keys()” method of JavaScript, compose a function titled 
+“grabKeys” that will take in an object and return all of the keys of the key:value pairs of 
+that object.
+
+
+Parameters:
+	obj: The object of which the enumerable's own properties are to be returned.
+
+Return value: An array of strings that represent all the enumerable properties of the 
+given object.
+*/
 Object.grabKeys=function(object1)
 {
-	let return_key=[];
-	for (let item in object1)
+	let return_key=[];			//return array
+	for (let item in object1)	//for each loop to get the keys
 	{
-		return_key.push(item);
+		return_key.push(item);	//push each key into the array
 	}
-	return return_key;
+	return return_key;			//return array of keys of type string
 }
 
 //testing Object.grabKeys()
@@ -238,13 +275,28 @@ print("-------------------------------------------")
 let grabKeys_test=Object.grabKeys(task);
 print(grabKeys_test); //keys should be ['morning', 'day', 'night']
 //======================================================================
+/*
+
+Done by: James Yoo (02/24/21)
+
+grabValues()
+
+Without using the native “Object.values()” method of JavaScript, compose a function 
+titled “grabValues” that will take in an object and return all of the values of the key:value 
+pairs of that object.
+
+Parameters:
+	obj: The object of which the enumerable's own properties are to be returned.
+
+Return value: An array containing the given object's own enumerable property values.
+*/
 Object.grabValues=function(object1){
-	let return_val=[];
-	for (let item in object1)
+	let return_val=[];					//return array
+	for (let item in object1)			//get each key in the object
 	{
-		return_val.push(object1[item]);
+		return_val.push(object1[item]);	//access the values through the key and then push
 	}
-	return return_val;
+	return return_val;					//return the array of values of type string
 }
 
 //testing Object.grabValues()
