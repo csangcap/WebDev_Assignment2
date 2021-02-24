@@ -3,8 +3,9 @@ Web Development - Spring 2021
 Assignment 2
 Team members:
   Caitlin-Dawn Sangcap (created the file, the repo and did myMap() and myFilter() functions)
-  Alfonso Gunawan
+  Alfonso Gunawan (worked on some, every, reduce)
   James Yoo (Worked on myLastIndexOf(), grabKeys(), grabValues())
+  Ifte Ahmed (worked IndexOf, push, includes)
 */
 
 /*
@@ -303,3 +304,40 @@ Object.grabValues=function(object1){
 print("-------------------------------------------")
 let grabValues_test=Object.grabValues(task);
 print(grabValues_test);
+
+//======================================================================
+/*
+Done by: Ifte Ahmed (02/24/21)
+
+indexOf()
+
+Without using the native “Array.prototype.indexOf” method of JavaScript, compose a function 
+titled “myIndexOf” that will take in an array of elements and returns the index of the first 
+encounter of a target element (if it is found) or -1 if that element does not exist within the input array.
+
+indexOf() compares searchElement to elements of the Array using strict equality (the same method used by the === or triple-equals operator).
+
+parameters:
+	searchElement: element to locate in the array
+	fromIndex(optional): An index on where to start the search from
+
+returns value:
+	the first index of the element in the array; -1 if not found
+*/
+
+Array.prototype.indexOf= function(searchElement)
+{
+	//let lastElement=this.length-1;	//Index to start searching from the back
+	
+	let result = -1;//output
+	for (let index= 0; index < this.length-1; index++)	//Loop through the array from 0 to end
+	{
+		if (searchElement===this[index])//Use strictly equal(===) to compare the values in the array
+		{
+			result=index; //if match switch result with the correct index
+		}
+	}
+	return result;							
+}
+//above function is missing optional parameters
+//======================================================================
