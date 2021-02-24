@@ -4,6 +4,7 @@ Assignment 2
 Team members:
   Caitlin-Dawn Sangcap (created the file, the repo and did myMap() and myFilter() functions)
   Alfonso Gunawan
+  James Yoo (Worked on myLastIndexOf(), grabKeys(), grabValues())
 */
 
 /*
@@ -170,3 +171,50 @@ print(filter_trial);
 
 //======================================================================
 
+
+Array.prototype.myLastIndexOf= function(match)
+{
+	let target=-1;
+	for (let i=0; i<this.length; i++)
+	{
+		if (match===this[i])
+		{
+			target=i; 
+		}
+	}
+	return target;
+}
+//Testing myLastIndexOf()
+print("------------------------------")
+print("First myLastIndexOf() test:");
+const lookUp=1;
+const arr10=[2,3,1,4];
+var myLastIndexOf_test=arr10.myLastIndexOf(lookUp);
+print(`Looking for ${lookUp}`);
+print(`Current array: ${arr10}`);
+print(myLastIndexOf_test);  //expected output is 2
+
+print("Second myLastIndexOf() test:");
+const animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
+const lookUp2='Dodo';
+myLastIndexOf_test=animals.myLastIndexOf(lookUp2);
+print(`Looking for ${lookUp2}`);
+print(`Current array: ${animals}`);
+print(myLastIndexOf_test);	//expected output is 3
+
+print ("Third myLastIndexOf() test:")
+const lookUp3='Tiger';
+myLastIndexOf_test=animals.myLastIndexOf(lookUp3);
+print(`Looking for ${lookUp3}`);
+print(`Current array: ${animals}`);
+print(myLastIndexOf_test); //expected output is 1
+//======================================================================
+
+Object.grabKeys=function()
+{
+
+}
+
+Object.grabValues=function(){
+
+}
