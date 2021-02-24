@@ -227,7 +227,7 @@ Object.grabKeys=function(object1)
 	return return_key;
 }
 
-//testing Object.grabKeys
+//testing Object.grabKeys()
 const task= {
 	'morning' : 'eat',
 	'day':'work',
@@ -238,6 +238,16 @@ print("-------------------------------------------")
 let grabKeys_test=Object.grabKeys(task);
 print(grabKeys_test); //keys should be ['morning', 'day', 'night']
 //======================================================================
-Object.grabValues=function(){
-	
+Object.grabValues=function(object1){
+	let return_val=[];
+	for (let item in object1)
+	{
+		return_val.push(object1[item]);
+	}
+	return return_val;
 }
+
+//testing Object.grabValues()
+print("-------------------------------------------")
+let grabValues_test=Object.grabValues(task);
+print(grabValues_test);
