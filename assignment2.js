@@ -515,4 +515,3 @@ const reduced = (accumulator, currentValue) => accumulator + currentValue;
 console.log(array3.myReduce(reduced));
 //expected output should be 46
 //2 + 4 + 6 + 7 + 8 + 9 + 10 = 46
-
