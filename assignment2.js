@@ -361,9 +361,9 @@ Array.prototype.myPush= function(...elementN) //spread syntax for multiple eleme
 {
 	for(let item of elementN) //each item of elementN
 	{
-		this[this.length] = item;
+		this[this.length] = item; //next index in array is set to the new item
 	}
-	return this.length;
+	return this.length; //return new length of array
 }
 
 //testing for this function
@@ -379,4 +379,46 @@ console.log(count2);
 //expected output: 7
 console.log(animals);
 // expected output: Array ["pigs", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
+//======================================================================
+/*
+Done by: Ifte Ahmed (02/24/21)
+
+myIncludes()
+
+Without using the native “Array.prototype.includes” method of JavaScript, compose a function 
+titled “myIncludes” that will take in an array of elements and indicate whether or not a target element 
+is contained within the input array. This returns a boolean.
+
+parameters:
+	valueToFind : the value to search for
+
+returns value:
+	A Boolean which is true if the value valueToFind is found within the array (or the part of the array indicated by the index fromIndex, if specified).
+	Values of zero are all considered to be equal, regardless of sign. (That is, -0 is considered to be equal to both 0 and +0), but false is not considered to be the same as 0.
+*/
+
+Array.prototype.myIncludes= function(valueToFind)
+{
+	let result = false;
+	for(let index=0;index < this.length; index++) 
+	{
+		if(this[index] === valueToFind) //if items match set result to true
+		{
+			result =true;
+		}
+	}
+	return result;
+}
+
+//testing below
+const array1 = [1, 2, 3];
+console.log(array1.myIncludes(2));
+// expected output: true
+
+const pets = ['cat', 'dog', 'bat'];
+console.log(pets.myIncludes('cat'));
+// expected output: true
+
+console.log(pets.myIncludes('at'));
+// expected output: false
 //======================================================================
