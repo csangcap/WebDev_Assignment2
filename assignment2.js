@@ -436,7 +436,7 @@ Array.prototype.myEvery = function(callback)
   //Use a for loop to iterate through the array
   for(let i = 0; i < this.length; i++)
   {
-    //Checks if the value in the array is true 
+    //Checks if the value in the array is false 
     if(!callback(this[i], i , this))
     {
       return false;
