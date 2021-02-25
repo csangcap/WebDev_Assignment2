@@ -309,7 +309,7 @@ print(grabValues_test);
 /*
 Done by: Ifte Ahmed (02/24/21)
 
-indexOf()
+myIndexOf()
 
 Without using the native “Array.prototype.indexOf” method of JavaScript, compose a function 
 titled “myIndexOf” that will take in an array of elements and returns the index of the first 
@@ -325,12 +325,10 @@ returns value:
 	the first index of the element in the array; -1 if not found
 */
 
-Array.prototype.indexOf= function(searchElement)
-{
-	//let lastElement=this.length-1;	//Index to start searching from the back
-	
+Array.prototype.myIndexOf= function(searchElement)
+{	
 	let result = -1;//output
-	for (let index= 0; index < this.length-1; index++)	//Loop through the array from 0 to end
+	for (let index= 0; index < this.length; index++)	//Loop through the array from 0 to end
 	{
 		if (searchElement===this[index])//Use strictly equal(===) to compare the values in the array
 		{
@@ -340,4 +338,45 @@ Array.prototype.indexOf= function(searchElement)
 	return result;							
 }
 //above function is missing optional parameters
+//======================================================================
+
+/*
+Done by: Ifte Ahmed (02/24/21)
+
+myPush()
+
+Without using the native “Array.prototype.push” method of JavaScript, compose a function 
+titled “myPush” that will take in an array of elements as well as an elementToAdd and append that element to the end of the array.
+
+The push method appends values to an array.
+
+parameters:
+	elementN : the elements to add to the end of the array
+
+returns value:
+	The new length property of the object upon which the method was called
+*/
+
+Array.prototype.myPush= function(...elementN) //spread syntax for multiple elements
+{
+	for(let item of elementN) //each item of elementN
+	{
+		this[this.length] = item;
+	}
+	return this.length;
+}
+
+//testing for this function
+const animals = ['pigs', 'goats', 'sheep'];
+const count = animals.myPush('cows');
+console.log(count);
+// expected output: 4
+console.log(animals);
+// expected output: Array ["pigs", "goats", "sheep", "cows"]
+
+const count2= animals.myPush('chickens', 'cats', 'dogs');
+console.log(count2);
+//expected output: 7
+console.log(animals);
+// expected output: Array ["pigs", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
 //======================================================================
